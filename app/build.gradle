@@ -28,7 +28,7 @@ android {
             def ksKeyAlias = keystoreProperties['RELEASE_KEY_ALIAS'] ?: System.getenv('RELEASE_KEY_ALIAS')
             def ksKeyPass = keystoreProperties['RELEASE_KEY_PASSWORD'] ?: System.getenv('RELEASE_KEY_PASSWORD')
             if (ksStoreFile != null && ksStorePass != null) {
-                storeFile file(ksStoreFile)
+                storeFile rootProject.file(ksStoreFile)
                 storePassword ksStorePass
                 keyAlias ksKeyAlias
                 keyPassword ksKeyPass
