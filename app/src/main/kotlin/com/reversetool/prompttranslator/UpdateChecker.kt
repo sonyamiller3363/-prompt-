@@ -348,7 +348,7 @@ class UpdateChecker(
         }
 
         private fun getApkDownloadUrl(release: JsonObject): String? {
-            return try {
+            try {
                 if (release.has("assets")) {
                     val assets = release.getAsJsonArray("assets")
                     for (i in 0 until assets.size()) {
@@ -362,7 +362,7 @@ class UpdateChecker(
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-            null
+            return null
         }
     }
 
